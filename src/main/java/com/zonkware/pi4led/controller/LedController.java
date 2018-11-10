@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LedController {
 
     private static GpioPinDigitalOutput redPin, greenPin, yellowPin;
+    private GpioController gpio = GpioFactory.getInstance();
 
     @RequestMapping("/")
     public String greeting() {
@@ -17,17 +18,10 @@ public class LedController {
     @RequestMapping("/red")
     public String redLight() {
         if (redPin == null) {
-            GpioController gpio = GpioFactory.getInstance();
             redPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "red", PinState.LOW);
         }
 
         redPin.toggle();
-        if (greenPin != null) {
-            greenPin.low();
-        }
-        if (yellowPin != null) {
-            yellowPin.low();
-        }
 
         return "Red LED toggled";
     }
@@ -35,7 +29,6 @@ public class LedController {
     @RequestMapping("/green")
     public String greenLight() {
         if (greenPin == null) {
-            GpioController gpio = GpioFactory.getInstance();
             greenPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00, "green", PinState.LOW);
         }
 
@@ -54,7 +47,6 @@ public class LedController {
     @RequestMapping("/yellow")
     public String yellowLight() {
         if (yellowPin == null) {
-            GpioController gpio = GpioFactory.getInstance();
             yellowPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, "yellow", PinState.LOW);
         }
 
