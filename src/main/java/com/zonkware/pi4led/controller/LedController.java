@@ -34,13 +34,6 @@ public class LedController {
 
         greenPin.toggle();
 
-        if (redPin != null) {
-            redPin.low();
-        }
-        if (yellowPin != null) {
-            yellowPin.low();
-        }
-
         return "Green LED toggled";
     }
 
@@ -51,13 +44,6 @@ public class LedController {
         }
 
         yellowPin.toggle();
-
-        if (greenPin != null) {
-            greenPin.low();
-        }
-        if (redPin != null) {
-            redPin.low();
-        }
 
         return "Yellow LED toggled";
     }
