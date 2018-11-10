@@ -9,7 +9,7 @@ public class LedController {
 
     private static GpioPinDigitalOutput greenPin, yellowPin;
     private GpioController gpio = GpioFactory.getInstance();
-    private static GpioPinDigitalOutput redPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "red", PinState.LOW);
+    private GpioPinDigitalOutput redPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "red", PinState.LOW);
 
 
     @RequestMapping("/")
