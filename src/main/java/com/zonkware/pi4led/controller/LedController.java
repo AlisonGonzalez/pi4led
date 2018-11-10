@@ -21,7 +21,7 @@ public class LedController {
             redPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "red", PinState.LOW);
         }
 
-        greenPin.toggle();
+        red.toggle();
 
         return "Red LED toggled";
     }
