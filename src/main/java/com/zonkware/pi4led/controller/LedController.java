@@ -23,7 +23,7 @@ public class LedController {
 
         greenPin.toggle();
 
-        return "OK";
+        return "Red LED toggled";
     }
 
     @RequestMapping("/green")
@@ -35,7 +35,7 @@ public class LedController {
 
         greenPin.toggle();
 
-        return "OK";
+        return "Green LED toggled";
     }
 
 }
