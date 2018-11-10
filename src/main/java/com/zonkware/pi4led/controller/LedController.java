@@ -15,7 +15,7 @@ public class LedController {
     }
 
     @RequestMapping("/red")
-    public String light() {
+    public String redLight() {
         if (pin == null) {
             GpioController gpio = GpioFactory.getInstance();
             pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "red", PinState.LOW);
@@ -27,7 +27,7 @@ public class LedController {
     }
 
     @RequestMapping("/green")
-    public String light() {
+    public String greenLight() {
         if (pin == null) {
             GpioController gpio = GpioFactory.getInstance();
             pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00, "green", PinState.LOW);
